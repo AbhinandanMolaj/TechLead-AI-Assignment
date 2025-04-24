@@ -1,4 +1,3 @@
-version: '3'
 services:
   model-api:
     build:
@@ -6,12 +5,3 @@ services:
       dockerfile: Dockerfile.api
     ports:
       - "5000:5000"
-  
-  triton-server:
-    build:
-      context: .
-      dockerfile: Dockerfile.triton
-    ports:
-      - "8000:8000"
-      - "8001:8001"
-      - "8002:8002"

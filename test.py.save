@@ -40,9 +40,6 @@ def test_triton_api():
         std = np.array([0.229, 0.224, 0.225]).reshape(3, 1, 1)
         img_array = (img_array - mean) / std
         
-        # Ensure input is FP32
-        img_array = img_array.astype(np.float32)
-
         # Create client
         print("Connecting to Triton server...")
         client = httpclient.InferenceServerClient(url="localhost:8000")
@@ -82,3 +79,4 @@ if __name__ == "__main__":
         test_triton_api()
     except Exception as e:
         print(f"Error testing Triton API: {e}")
+

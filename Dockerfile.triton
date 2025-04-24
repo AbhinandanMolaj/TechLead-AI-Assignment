@@ -1,14 +1,16 @@
-# First stage: Export model
-FROM python:3.9-slim AS model-exporter
-RUN pip install torch torchvision --no-cache-dir
-WORKDIR /app
-COPY export_model.py /app/
-RUN mkdir -p /app/model_repository/resnext101/1
-RUN python export_model.py
+# Use the full Triton server image instead of minimal
+FROM nvcr.io/nvidia/tritonserver:23.10-py3
 
-# Second stage: Use minimum Triton server
-FROM nvcr.io/nvidia/tritonserver:23.10-py3-min
-COPY --from=model-exporter /app/model_repository /models
-COPY model_repository/resnext101/config.pbtxt /models/resnext101/config.pbtxt
+# Create model directory structure
+WORKDIR /models
+RUN mkdir -p /models/resnext101/1
+
+# Copy pre-exported model and config
+COPY model_repository/resnext101/1/model.pt /models/resnext101/1/
+COPY model_repository/resnext101/config.pbtxt /models/resnext101/
+
+# Expose ports
 EXPOSE 8000 8001 8002
-CMD ["tritonserver", "--model-repository=/models"]
+
+# Start Triton - specify full path
+CMD ["/opt/tritonserver/bin/tritonserver", "--model-repository=/models"]
