@@ -1,0 +1,15 @@
+FROM python:3.9-slim
+
+# Install minimal dependencies first
+RUN pip install flask pillow requests matplotlib --no-cache-dir
+
+# Copy API code
+WORKDIR /app
+COPY app/api_lite.py /app/api.py
+COPY istockphoto-1412238848-612x612.jpg /app/test.jpg
+
+# Expose port
+EXPOSE 5000
+
+# Run the API
+CMD ["python", "api.py"]
