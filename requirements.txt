@@ -1,3 +1,4 @@
 torchvision
 tritonclient[http]
 torch torchvision --no-cache-dir
+ultralytics
