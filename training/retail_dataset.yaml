@@ -1,0 +1,13 @@
+
+# YOLOv8 Dataset Configuration for Retail Detection
+path: /workspaces/TechLead-AI-Assignment/training/data
+train: images
+val: images
+
+nc: 5
+names: 
+  0: person
+  1: shopping_cart
+  2: product
+  3: shelf
+  4: checkout

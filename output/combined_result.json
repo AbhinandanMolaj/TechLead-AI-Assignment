@@ -1,0 +1,82 @@
+{
+    "classification": {
+        "category": "grocery store",
+        "class_id": 582,
+        "score": 0.5463840350604183
+    },
+    "object_detection": {
+        "count": 7,
+        "detections": [
+            {
+                "box": [
+                    339,
+                    290,
+                    415,
+                    383
+                ],
+                "class": "handbag",
+                "confidence": 0.9220555417472545
+            },
+            {
+                "box": [
+                    193,
+                    264,
+                    308,
+                    336
+                ],
+                "class": "cell phone",
+                "confidence": 0.7298507107383649
+            },
+            {
+                "box": [
+                    467,
+                    109,
+                    561,
+                    165
+                ],
+                "class": "cell phone",
+                "confidence": 0.861698393062085
+            },
+            {
+                "box": [
+                    437,
+                    41,
+                    514,
+                    147
+                ],
+                "class": "cell phone",
+                "confidence": 0.700749185164024
+            },
+            {
+                "box": [
+                    317,
+                    196,
+                    393,
+                    336
+                ],
+                "class": "backpack",
+                "confidence": 0.8376685507669752
+            },
+            {
+                "box": [
+                    289,
+                    130,
+                    346,
+                    226
+                ],
+                "class": "bottle",
+                "confidence": 0.8523943244691823
+            },
+            {
+                "box": [
+                    240,
+                    152,
+                    389,
+                    257
+                ],
+                "class": "backpack",
+                "confidence": 0.7082595188901329
+            }
+        ]
+    }
+}
